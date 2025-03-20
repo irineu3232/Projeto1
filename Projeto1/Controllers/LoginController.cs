@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Projeto1.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace Projeto1.Controllers
@@ -23,6 +24,22 @@ namespace Projeto1.Controllers
             }
             ModelState.AddModelError("", "Email ou senhas inválidos.");
             return View();
+        }
+
+        public IActionResult Cadastro()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Cadastro(Usuario usuario)
+        {
+            if(ModelState.IsValid)
+            {
+                _usuarioRepositorio.AdicionarUsuario(usuario);
+                return RedirectToAction("Login");
+            }
+            return View(usuario);
         }
     }
 }
