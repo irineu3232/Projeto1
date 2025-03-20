@@ -1,11 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Projeto1.Models;
 using System.ComponentModel.DataAnnotations;
+using Projeto1.Repositorio;
 
 namespace Projeto1.Controllers
 {
     public class LoginController : Controller
     {
+        //Construtor
+        private readonly UsuarioRepositorio _usuarioRepositorio;
+
+        public LoginController(UsuarioRepositorio usuarioRepositorio)
+        {
+            _usuarioRepositorio = usuarioRepositorio;
+        }
+        
+
         public IActionResult Login()
         {
             return View();
