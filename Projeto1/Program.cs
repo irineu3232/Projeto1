@@ -2,6 +2,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//adicionando serviço do usuário Repositorio
+builder.Services.AddScoped<Projeto1.Repositorio.UsuarioRepositorio>();
 
 var app = builder.Build();
 
