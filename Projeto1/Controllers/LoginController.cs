@@ -29,8 +29,7 @@ namespace Projeto1.Controllers
             {
                 //Autenticação bem-sucedida
                 // return RedirectToAction("Index","Home"); a caso esteja errado ter como trocar rapido.
-                // ele retorna se tiver certo da página Login e redireciona para a pagina Home ("Login",depois "Home")
-                return RedirectToAction("Login", "Home");
+                return RedirectToAction("Index", "Home");
             }
             ModelState.AddModelError("", "Email ou senhas inválidos.");
             return View();
