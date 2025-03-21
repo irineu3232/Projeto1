@@ -45,7 +45,7 @@ namespace Projeto1.Repositorio
                             Senha = reader.GetString("Senha"),
 
                         };
-
+     
                     }
 
                 }
